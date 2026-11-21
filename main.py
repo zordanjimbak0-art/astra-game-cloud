@@ -230,34 +230,44 @@ def upload_chunk():
 # ─── CHUNKED UPLOAD: Finalize ─────────────────────────────────────────────────
 @app.route("/api/upload/finalize", methods=["POST"])
 def upload_finalize():
-    data      = request.json
-    upload_id = data.get("upload_id")
-    if not upload_id:
-        return jsonify({"error": "Missing upload_id"}), 400
-    chunk_folder = os.path.join(CHUNKS_DIR, upload_id)
-    if not os.path.exists(chunk_folder):
-        return jsonify({"error": "Invalid upload_id"}), 404
-    meta_path = os.path.join(chunk_folder, "meta.json")
-    with open(meta_path) as f:
-        meta = json.load(f)
-    filename = meta["filename"]
-    dest_path = os.path.join(STORAGE_DIR, filename)
-    # Gabungkan semua chunks
-    chunks = sorted([f for f in os.listdir(chunk_folder) if f.startswith("chunk_")])
-    with open(dest_path, "wb") as out:
-        for chunk_name in chunks:
-            with open(os.path.join(chunk_folder, chunk_name), "rb") as c:
-                out.write(c.read())
-    # Hapus folder chunks sementara
-    shutil.rmtree(chunk_folder, ignore_errors=True)
-    final_size = os.path.getsize(dest_path)
-    return jsonify({
-        "status": "complete",
-        "filename": filename,
-        "size_bytes": final_size,
-        "size_gb": round(final_size / (1024**3), 3),
-        "download_url": f"/api/download/{filename}"
-    })
+    try:
+        data      = request.get_json(force=True) or {}
+        upload_id = data.get("upload_id")
+        if not upload_id:
+            return jsonify({"error": "Missing upload_id"}), 400
+        chunk_folder = os.path.join(CHUNKS_DIR, upload_id)
+        if not os.path.exists(chunk_folder):
+            return jsonify({"error": f"Invalid upload_id: {upload_id}"}), 404
+        meta_path = os.path.join(chunk_folder, "meta.json")
+        with open(meta_path, "r") as f:
+            meta = json.load(f)
+        filename  = meta["filename"]
+        dest_path = os.path.join(STORAGE_DIR, filename)
+        # Sort & merge semua chunks
+        chunks = sorted(
+            [f for f in os.listdir(chunk_folder) if f.startswith("chunk_")],
+            key=lambda x: int(x.split("_")[1])
+        )
+        if not chunks:
+            return jsonify({"error": "No chunks found"}), 400
+        with open(dest_path, "wb") as out:
+            for chunk_name in chunks:
+                chunk_path = os.path.join(chunk_folder, chunk_name)
+                with open(chunk_path, "rb") as c:
+                    shutil.copyfileobj(c, out)
+        # Bersihkan temp folder
+        shutil.rmtree(chunk_folder, ignore_errors=True)
+        final_size = os.path.getsize(dest_path)
+        return jsonify({
+            "status": "complete",
+            "filename": filename,
+            "size_bytes": final_size,
+            "size_gb": round(final_size / (1024**3), 3),
+            "download_url": f"/api/download/{filename}"
+        })
+    except Exception as e:
+        import traceback
+        return jsonify({"error": str(e), "trace": traceback.format_exc()}), 500
 
 # ─── SIMPLE UPLOAD (backward compat, small files) ─────────────────────────────
 @app.route("/api/upload", methods=["POST"])
