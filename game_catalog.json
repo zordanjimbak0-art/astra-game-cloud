@@ -1,0 +1,399 @@
+{
+  "metadata": {
+    "version": "1.0-Astra-Ecosystem",
+    "ssd_path": "D:\\Game\\Games",
+    "hdd_path": "E:\\Games_HDD"
+  },
+  "games": {
+    "AlbionOnline": {
+      "title": "AlbionOnline",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\AlbionOnline",
+      "path_hdd": null,
+      "size_gb": 7.13,
+      "primary_exe": "D:\\Game\\Games\\AlbionOnline\\Albion-Online_BE.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Blasphemous-2-SteamRIP.com": {
+      "title": "Blasphemous-2-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Blasphemous-2-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 7.36,
+      "primary_exe": "D:\\Game\\Games\\Blasphemous-2-SteamRIP.com\\Blasphemous 2\\Blasphemous 2.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Blasphemous-SteamRIP.com": {
+      "title": "Blasphemous-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Blasphemous-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 0.86,
+      "primary_exe": "D:\\Game\\Games\\Blasphemous-SteamRIP.com\\Blasphemous\\Blasphemous.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Bloons TD 5": {
+      "title": "Bloons TD 5",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Bloons TD 5",
+      "path_hdd": null,
+      "size_gb": 0.38,
+      "primary_exe": "D:\\Game\\Games\\Bloons TD 5\\BTD5-Win.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "DREDGE-SteamRIP.com": {
+      "title": "DREDGE-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\DREDGE-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 1.24,
+      "primary_exe": "D:\\Game\\Games\\DREDGE-SteamRIP.com\\DREDGE\\DREDGE.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "FUSION_KR_PVZ": {
+      "title": "FUSION_KR_PVZ",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\FUSION_KR_PVZ",
+      "path_hdd": null,
+      "size_gb": 0.0,
+      "primary_exe": "",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Graveyard Keeper 2": {
+      "title": "Graveyard Keeper 2",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Graveyard Keeper 2",
+      "path_hdd": null,
+      "size_gb": 1.38,
+      "primary_exe": "D:\\Game\\Games\\Graveyard Keeper 2\\GraveyardKeeper2.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "How-to-Fish-SteamRIP.com": {
+      "title": "How-to-Fish-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\How-to-Fish-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 1.32,
+      "primary_exe": "D:\\Game\\Games\\How-to-Fish-SteamRIP.com\\How to Fish\\How to Fish.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Journey to the Savage Planet": {
+      "title": "Journey to the Savage Planet",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Journey to the Savage Planet",
+      "path_hdd": null,
+      "size_gb": 5.44,
+      "primary_exe": "D:\\Game\\Games\\Journey to the Savage Planet\\Towers.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Kingdom Rush Vengeance": {
+      "title": "Kingdom Rush Vengeance",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Kingdom Rush Vengeance",
+      "path_hdd": null,
+      "size_gb": 1.33,
+      "primary_exe": "D:\\Game\\Games\\Kingdom Rush Vengeance\\Kingdom Rush Vengeance.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "KingdomRush": {
+      "title": "KingdomRush",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\KingdomRush",
+      "path_hdd": null,
+      "size_gb": 0.45,
+      "primary_exe": "",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "KingdomRushFrontiers": {
+      "title": "KingdomRushFrontiers",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\KingdomRushFrontiers",
+      "path_hdd": null,
+      "size_gb": 0.41,
+      "primary_exe": "",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "kingdomrushorigins": {
+      "title": "kingdomrushorigins",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\kingdomrushorigins",
+      "path_hdd": null,
+      "size_gb": 0.46,
+      "primary_exe": "",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Metal Slug Attack Reloaded": {
+      "title": "Metal Slug Attack Reloaded",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Metal Slug Attack Reloaded",
+      "path_hdd": null,
+      "size_gb": 2.51,
+      "primary_exe": "D:\\Game\\Games\\Metal Slug Attack Reloaded\\METAL SLUG ATTACK RELOADED\\MSAR\\Binaries\\Win64\\MSAR-Win64-Shipping.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Midnight.Mazesoba": {
+      "title": "Midnight.Mazesoba",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Midnight.Mazesoba",
+      "path_hdd": null,
+      "size_gb": 0.7,
+      "primary_exe": "D:\\Game\\Games\\Midnight.Mazesoba\\Midnight.Mazesoba\\_Redist\\oalinst.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Minecraft Dungeons": {
+      "title": "Minecraft Dungeons",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Minecraft Dungeons",
+      "path_hdd": null,
+      "size_gb": 5.47,
+      "primary_exe": "D:\\Game\\Games\\Minecraft Dungeons\\Minecraft Dungeons\\Dungeons.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "MyVoiceZoo-SteamRIP.com": {
+      "title": "MyVoiceZoo-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\MyVoiceZoo-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 0.29,
+      "primary_exe": "D:\\Game\\Games\\MyVoiceZoo-SteamRIP.com\\MyVoiceZoo\\MyVoiceZoo.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Naruto Shippuden UNS Revolution": {
+      "title": "Naruto Shippuden UNS Revolution",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Naruto Shippuden UNS Revolution",
+      "path_hdd": null,
+      "size_gb": 7.55,
+      "primary_exe": "D:\\Game\\Games\\Naruto Shippuden UNS Revolution\\Naruto Shippuden Ultimate Ninja Storm Revolution\\NSUNSR.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Naruto Shippuden UNS4": {
+      "title": "Naruto Shippuden UNS4",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Naruto Shippuden UNS4",
+      "path_hdd": "E:\\Games_HDD\\Naruto Shippuden UNS4",
+      "size_gb": 38.9,
+      "primary_exe": "D:\\Game\\Games\\Naruto Shippuden UNS4\\NARUTO SHIPPUDEN Ultimate Ninja Storm 4\\NSUNS4.exe",
+      "is_mirrored_on_hdd": true,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Plants vs Zombies GOTY": {
+      "title": "Plants vs Zombies GOTY",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Plants vs Zombies GOTY",
+      "path_hdd": null,
+      "size_gb": 0.1,
+      "primary_exe": "D:\\Game\\Games\\Plants vs Zombies GOTY\\PlantsVsZombies.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Postal 2": {
+      "title": "Postal 2",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Postal 2",
+      "path_hdd": null,
+      "size_gb": 7.31,
+      "primary_exe": "D:\\Game\\Games\\Postal 2\\POSTAL 2\\System\\Postal2.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Project Zomboid": {
+      "title": "Project Zomboid",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Project Zomboid",
+      "path_hdd": null,
+      "size_gb": 9.65,
+      "primary_exe": "D:\\Game\\Games\\Project Zomboid\\ProjectZomboid\\ProjectZomboid64.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Quake": {
+      "title": "Quake",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Quake",
+      "path_hdd": null,
+      "size_gb": 1.78,
+      "primary_exe": "D:\\Game\\Games\\Quake\\glquake.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Raft": {
+      "title": "Raft",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Raft",
+      "path_hdd": null,
+      "size_gb": 7.26,
+      "primary_exe": "D:\\Game\\Games\\Raft\\Raft.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Serious Sam 2": {
+      "title": "Serious Sam 2",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Serious Sam 2",
+      "path_hdd": null,
+      "size_gb": 8.46,
+      "primary_exe": "D:\\Game\\Games\\Serious Sam 2\\Serious Sam 2\\Bin\\Sam2.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Serious Sam The First Encounter": {
+      "title": "Serious Sam The First Encounter",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Serious Sam The First Encounter",
+      "path_hdd": null,
+      "size_gb": 0.4,
+      "primary_exe": "D:\\Game\\Games\\Serious Sam The First Encounter\\Serious Sam The First Encounter\\Bin\\SeriousSam.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Snowed.Under": {
+      "title": "Snowed.Under",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Snowed.Under",
+      "path_hdd": null,
+      "size_gb": 1.36,
+      "primary_exe": "D:\\Game\\Games\\Snowed.Under\\Snowed.Under\\game\\SnowProject\\Binaries\\Win64\\SnowProject-Win64-Shipping.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Soulmask": {
+      "title": "Soulmask",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Soulmask",
+      "path_hdd": "E:\\Games_HDD\\Soulmask",
+      "size_gb": 23.34,
+      "primary_exe": "D:\\Game\\Games\\Soulmask\\WS.exe",
+      "is_mirrored_on_hdd": true,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "SpongeBob": {
+      "title": "SpongeBob",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\SpongeBob",
+      "path_hdd": "E:\\Games_HDD\\SpongeBob",
+      "size_gb": 9.97,
+      "primary_exe": "D:\\Game\\Games\\SpongeBob\\Ghost.exe",
+      "is_mirrored_on_hdd": true,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Stacklands.v1.5.0.25.ALL.DLC": {
+      "title": "Stacklands.v1.5.0.25.ALL.DLC",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Stacklands.v1.5.0.25.ALL.DLC",
+      "path_hdd": null,
+      "size_gb": 0.73,
+      "primary_exe": "D:\\Game\\Games\\Stacklands.v1.5.0.25.ALL.DLC\\Stacklands.v1.5.0.25.ALL.DLC\\Stacklands.v1.5.0.25.ALL.DLC\\Stacklands.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Stardew Valley": {
+      "title": "Stardew Valley",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Stardew Valley",
+      "path_hdd": null,
+      "size_gb": 0.65,
+      "primary_exe": "D:\\Game\\Games\\Stardew Valley\\Stardew.Valley\\Stardew Valley.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Subnautica": {
+      "title": "Subnautica",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Subnautica",
+      "path_hdd": null,
+      "size_gb": 6.59,
+      "primary_exe": "D:\\Game\\Games\\Subnautica\\Subnautica\\Subnautica.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Subnautica 2": {
+      "title": "Subnautica 2",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Subnautica 2",
+      "path_hdd": "E:\\Games_HDD\\Subnautica 2",
+      "size_gb": 14.34,
+      "primary_exe": "D:\\Game\\Games\\Subnautica 2\\Subnautica2\\Subnautica2.exe",
+      "is_mirrored_on_hdd": true,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Subnautica-Below-Zero-SteamRIP.com": {
+      "title": "Subnautica-Below-Zero-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Subnautica-Below-Zero-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 8.24,
+      "primary_exe": "D:\\Game\\Games\\Subnautica-Below-Zero-SteamRIP.com\\Subnautica Below Zero\\SubnauticaZero.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Terraria": {
+      "title": "Terraria",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Terraria",
+      "path_hdd": null,
+      "size_gb": 0.76,
+      "primary_exe": "D:\\Game\\Games\\Terraria\\Terraria.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Thats-Not-My-Neighbor-SteamRIP.com": {
+      "title": "Thats-Not-My-Neighbor-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Thats-Not-My-Neighbor-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 0.49,
+      "primary_exe": "D:\\Game\\Games\\Thats-Not-My-Neighbor-SteamRIP.com\\That's not my neighbor\\That's not my neighbor.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "The.Binding.of.Isaac-Repentance-SteamRIP.com": {
+      "title": "The.Binding.of.Isaac-Repentance-SteamRIP.com",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\The.Binding.of.Isaac-Repentance-SteamRIP.com",
+      "path_hdd": null,
+      "size_gb": 1.56,
+      "primary_exe": "D:\\Game\\Games\\The.Binding.of.Isaac-Repentance-SteamRIP.com\\The Binding of Isaac - Repentance\\tools\\ModUploader\\ModUploader.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "The.Farmer.Was.Replaced.v2026.04.21": {
+      "title": "The.Farmer.Was.Replaced.v2026.04.21",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\The.Farmer.Was.Replaced.v2026.04.21",
+      "path_hdd": null,
+      "size_gb": 0.29,
+      "primary_exe": "D:\\Game\\Games\\The.Farmer.Was.Replaced.v2026.04.21\\TheFarmerWasReplaced.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    },
+    "Upin Ipin": {
+      "title": "Upin Ipin",
+      "location": "SSD",
+      "path_ssd": "D:\\Game\\Games\\Upin Ipin",
+      "path_hdd": null,
+      "size_gb": 5.27,
+      "primary_exe": "D:\\Game\\Games\\Upin Ipin\\UIUniverse.exe",
+      "is_mirrored_on_hdd": false,
+      "cloud_status": "LOCAL_INSTALLED"
+    }
+  }
+}
