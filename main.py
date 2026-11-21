@@ -208,24 +208,25 @@ def upload_init():
 # ─── CHUNKED UPLOAD: Upload Chunk ─────────────────────────────────────────────
 @app.route("/api/upload/chunk", methods=["POST"])
 def upload_chunk():
-    upload_id   = request.form.get("upload_id")
-    chunk_index = int(request.form.get("chunk_index", 0))
-    chunk_file  = request.files.get("chunk")
-    if not upload_id or not chunk_file:
-        return jsonify({"error": "Missing upload_id or chunk"}), 400
-    chunk_folder = os.path.join(CHUNKS_DIR, upload_id)
-    if not os.path.exists(chunk_folder):
-        return jsonify({"error": "Invalid upload_id"}), 404
-    chunk_path = os.path.join(chunk_folder, f"chunk_{chunk_index:06d}")
-    chunk_file.save(chunk_path)
-    # Update received count
-    meta_path = os.path.join(chunk_folder, "meta.json")
-    with open(meta_path) as f:
-        meta = json.load(f)
-    meta["received"] = meta.get("received", 0) + 1
-    with open(meta_path, "w") as f:
-        json.dump(meta, f)
-    return jsonify({"status": "ok", "chunk": chunk_index, "received": meta["received"], "total": meta["total_chunks"]})
+    try:
+        upload_id   = request.form.get("upload_id")
+        chunk_index = int(request.form.get("chunk_index", 0))
+        chunk_file  = request.files.get("chunk")
+        if not upload_id or not chunk_file:
+            return jsonify({"error": "Missing upload_id or chunk"}), 400
+        chunk_folder = os.path.join(CHUNKS_DIR, upload_id)
+        if not os.path.exists(chunk_folder):
+            # Auto-recreate jika folder hilang (Railway restart)
+            os.makedirs(chunk_folder, exist_ok=True)
+            return jsonify({"error": "Session expired, re-init required"}), 410
+        chunk_path = os.path.join(chunk_folder, f"chunk_{chunk_index:06d}")
+        # Stream langsung ke disk, hindari memory buffer besar
+        chunk_file.save(chunk_path)
+        chunk_size = os.path.getsize(chunk_path)
+        return jsonify({"status": "ok", "chunk": chunk_index, "size": chunk_size})
+    except Exception as e:
+        import traceback
+        return jsonify({"error": str(e), "trace": traceback.format_exc()[:500]}), 500
 
 # ─── CHUNKED UPLOAD: Finalize ─────────────────────────────────────────────────
 @app.route("/api/upload/finalize", methods=["POST"])
