@@ -193,7 +193,8 @@
       "size_gb": 38.9,
       "primary_exe": "D:\\Game\\Games\\Naruto Shippuden UNS4\\NARUTO SHIPPUDEN Ultimate Ninja Storm 4\\NSUNS4.exe",
       "is_mirrored_on_hdd": true,
-      "cloud_status": "LOCAL_INSTALLED"
+      "cloud_status": "HDD_JUNCTION_OFFLOADED",
+      "is_offloaded": true
     },
     "Plants vs Zombies GOTY": {
       "title": "Plants vs Zombies GOTY",
@@ -283,7 +284,8 @@
       "size_gb": 23.34,
       "primary_exe": "D:\\Game\\Games\\Soulmask\\WS.exe",
       "is_mirrored_on_hdd": true,
-      "cloud_status": "LOCAL_INSTALLED"
+      "cloud_status": "HDD_JUNCTION_OFFLOADED",
+      "is_offloaded": true
     },
     "SpongeBob": {
       "title": "SpongeBob",
@@ -293,7 +295,8 @@
       "size_gb": 9.97,
       "primary_exe": "D:\\Game\\Games\\SpongeBob\\Ghost.exe",
       "is_mirrored_on_hdd": true,
-      "cloud_status": "LOCAL_INSTALLED"
+      "cloud_status": "HDD_JUNCTION_OFFLOADED",
+      "is_offloaded": true
     },
     "Stacklands.v1.5.0.25.ALL.DLC": {
       "title": "Stacklands.v1.5.0.25.ALL.DLC",
@@ -333,7 +336,8 @@
       "size_gb": 14.34,
       "primary_exe": "D:\\Game\\Games\\Subnautica 2\\Subnautica2\\Subnautica2.exe",
       "is_mirrored_on_hdd": true,
-      "cloud_status": "LOCAL_INSTALLED"
+      "cloud_status": "HDD_JUNCTION_OFFLOADED",
+      "is_offloaded": true
     },
     "Subnautica-Below-Zero-SteamRIP.com": {
       "title": "Subnautica-Below-Zero-SteamRIP.com",
