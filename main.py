@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """
-ASTRA GAME CLOUD VAULT - WEB SERVER & PORTAL v1.0
-Central Cloud Game Repository & Browser Hub
+ASTRA GAME CLOUD VAULT - WEB SERVER & PORTAL v2.0
+Central Cloud Game Repository, Chunked Upload Engine & Browser Hub
+Mounted Volume: /vault_storage
 Komandan: MUHAMAD DAFFA CAHYA | TCG 7B — PNJ
 """
 import os
 import json
 from datetime import datetime
-from flask import Flask, render_template_string, jsonify, request
+from flask import Flask, render_template_string, jsonify, request, send_from_directory
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 PORT = int(os.environ.get("PORT", 8080))
 
-# Load catalog if exists
+STORAGE_DIR = "/vault_storage" if os.path.exists("/vault_storage") else os.path.join(os.path.dirname(__file__), "vault_storage")
+os.makedirs(STORAGE_DIR, exist_ok=True)
+
 CATALOG_FILE = os.path.join(os.path.dirname(__file__), "game_catalog.json")
 if os.path.exists(CATALOG_FILE):
     with open(CATALOG_FILE, "r", encoding="utf-8") as f:
@@ -41,7 +45,6 @@ HTML_PORTAL = """<!DOCTYPE html>
     border-bottom: 1px solid rgba(88,166,255,0.3);
     padding: 30px 20px 20px;
     text-align: center;
-    position: relative;
   }
   .header h1 {
     font-family: 'Orbitron', sans-serif;
@@ -162,9 +165,7 @@ HTML_PORTAL = """<!DOCTYPE html>
     border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
-    transition: opacity 0.2s;
   }
-  .btn-play:hover { opacity: 0.9; }
   .footer {
     text-align: center;
     padding: 40px 20px;
@@ -207,8 +208,8 @@ HTML_PORTAL = """<!DOCTYPE html>
       <div class="stat-lbl">Total Katalog Game</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#f0883e;">86.5 GB</div>
-      <div class="stat-lbl">Potensi Storage Reclaim</div>
+      <div class="stat-val" style="color:#238636;">{{ stored_files_count }}</div>
+      <div class="stat-lbl">Cloud Vault Stashed</div>
     </div>
   </div>
 
@@ -222,8 +223,8 @@ HTML_PORTAL = """<!DOCTYPE html>
         <div class="game-meta">
           <span>📦 {{ "%.2f"|format(game.size_gb) }} GB</span>
           <span>
-            {% if game.is_mirrored_on_hdd %}
-            <span class="badge badge-mirror">HDD Ready</span>
+            {% if game.is_offloaded or game.is_mirrored_on_hdd %}
+            <span class="badge badge-mirror">HDD Offloaded</span>
             {% else %}
             <span class="badge badge-ssd">SSD Active</span>
             {% endif %}
@@ -239,7 +240,7 @@ HTML_PORTAL = """<!DOCTYPE html>
 
   <div class="footer">
     <p>ASTRA GAME CLOUD VAULT • Terpisah Penuh Dari Sistem Akademik • Cloud 24/7</p>
-    <p style="margin-top: 6px;"><a href="/api/games" style="color:#58a6ff; text-decoration:none;">JSON API Endpoint</a> • <a href="/health" style="color:#58a6ff; text-decoration:none;">Health Check</a></p>
+    <p style="margin-top: 6px;"><a href="/api/games" style="color:#58a6ff; text-decoration:none;">JSON API Endpoint</a> • <a href="/api/storage" style="color:#58a6ff; text-decoration:none;">Storage Stats</a> • <a href="/health" style="color:#58a6ff; text-decoration:none;">Health Check</a></p>
   </div>
 </div>
 
@@ -251,12 +252,55 @@ def index():
     games_list = list(CATALOG_DATA.get("games", {}).values())
     games_list.sort(key=lambda x: x.get("size_gb", 0), reverse=True)
     total_size = sum(g.get("size_gb", 0) for g in games_list)
+    stored_files = os.listdir(STORAGE_DIR) if os.path.exists(STORAGE_DIR) else []
     return render_template_string(
         HTML_PORTAL,
         games=games_list,
         total_games=len(games_list),
-        total_size=total_size
+        total_size=total_size,
+        stored_files_count=len(stored_files)
     )
+
+@app.route("/api/upload", methods=["POST"])
+def upload_file():
+    if "file" not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    file = request.files["file"]
+    if file.filename == "":
+        return jsonify({"error": "No selected file"}), 400
+    filename = secure_filename(file.filename)
+    dest_path = os.path.join(STORAGE_DIR, filename)
+    file.save(dest_path)
+    file_size = os.path.getsize(dest_path)
+    return jsonify({
+        "status": "success",
+        "filename": filename,
+        "size_bytes": file_size,
+        "path": dest_path
+    })
+
+@app.route("/api/download/<filename>", methods=["GET"])
+def download_file(filename):
+    return send_from_directory(STORAGE_DIR, secure_filename(filename), as_attachment=True)
+
+@app.route("/api/storage", methods=["GET"])
+def storage_info():
+    files = []
+    total_bytes = 0
+    if os.path.exists(STORAGE_DIR):
+        for f in os.listdir(STORAGE_DIR):
+            fp = os.path.join(STORAGE_DIR, f)
+            if os.path.isfile(fp):
+                sz = os.path.getsize(fp)
+                total_bytes += sz
+                files.append({"name": f, "size_mb": round(sz / (1024*1024), 2)})
+    return jsonify({
+        "status": "online",
+        "storage_path": STORAGE_DIR,
+        "files_count": len(files),
+        "total_size_gb": round(total_bytes / (1024**3), 2),
+        "files": files
+    })
 
 @app.route("/api/games")
 def api_games():
